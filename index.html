@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light background-custom"
+    style="background:  rgba(248, 249, 250, [object Object]) !important">
+    <div class="container">
+      <a class="navbar-brand logo" href="#">
+        <h3>Chill Coffee</h3>
+        <imgsrc="https: //web100.vn/w-images/logo.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 menu-list-item">
+          <li class="nav-item"><a class="nav-link " aria-current="page" href="#">Homepage</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+              <li><a class="dropdown-item" href="#">Item 1</a></li>
+              <li><a class="dropdown-item" href="#">Item 2</a></li>
+              <li><a class="dropdown-item" href="#">Item 3</a></li>
+            </ul>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="cart-icon">
+    <button id="toggle-cart" class="btn btn-primary">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </button>
+  </div>
+  <div class="cart-container">
+    <h3>Giỏ hàng</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Hình ảnh</th>
+          <th>Tên sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody class="cart-items"></tbody>
+    </table>
+    <h4>Tổng tiền: <span class="total-price">0</span> đ</h4>
+    <button id="checkout-button" class="btn btn-success">Thanh toán</button>
+  </div>
+
+  <!-- Modal thanh toán -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Thông tin thanh toán</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="checkout-form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Tên</label>
+              <input type="text" class="form-control" id="name" placeholder="Nhập tên của bạn">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Số điện thoại</label>
+              <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại của bạn">
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Địa chỉ</label>
+              <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ của bạn">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" id="submit-checkout" class="btn btn-primary btn-comfirm">Xác nhận</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myCarousel-sts" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel-sts" data-bs-slide-to="0" class="" aria-label="Slide 1">
+      </button>
+      <button type="button" data-bs-target="#myCarousel-sts" data-bs-slide-to="1" aria-label="Slide 2" class="active"
+        aria-current="true">
+      </button>
+      <button type="button" data-bs-target="#myCarousel-sts" data-bs-slide-to="2" aria-label="Slide 3"
+        class=""></button>
+    </div>
+    
+
+
+
+
+    <div class="carousel-inner">
+      <div class="carousel-item active carousel-item-start">
+        <img src="./image/background1.jpg">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class='text-1'>Bestest Coffee</h1>
+            <p class='text-2'> Ngon như người yêu cũ của bạn.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item carousel-item-next carousel-item-start"><img
+          src="./image/background2.jpg">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class='text-3'>Coffee that fuels your dreams.</h1>
+            <p class='text-4'>A warm embrace of wakefulness.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item"><img src="./image/maxresdefault.jpg" alt='banner'>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class='text-5'>It’s not just coffee, it’s an experience</h1>
+            <p class='text-6'> Life is hard, coffee makes it easier.</p>
+          </div>
+        </div>
+      </div>
+    </div><button class="carousel-control-prev" type="button" data-bs-target="#myCarousel-sts"
+      data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span
+        class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button"
+      data-bs-target="#myCarousel-sts" data-bs-slide="next"><span class="carousel-control-next-icon"
+        aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+  </div>
+
+
+   <!-- phần lịch sử  -->
+  <div class="container feature-4-item">
+    <h2 class='mt-5 text-uppercase text-center text-1'>about us</h2>
+    <section class="about" id="about">
+      <h3 class="sub-heading"> </h3>
+      <h1 class="heading"> Chill Coffee</h1>
+     
+              <div class="row">
+                  <div class="images">
+                      <img src="./image/154163-nature-landscape-sunset-palm_trees-road-purple.jpg" alt="">
+                  </diV>
+                  <div class="content">
+                      <h3>best coffee in the country</h3>
+                      <p>Chào mừng bạn đến với Chill Coffee, nơi bạn có thể tận hưởng những phút giây thư giãn giữa lòng thành phố. Với không gian ấm cúng, được thiết kế theo phong cách mộc mạc, gần gũi với thiên nhiên, quán mang đến cảm giác yên bình và thoải mái. Thực đơn phong phú gồm cà phê nguyên chất, trà thảo mộc, nước ép tươi, cùng những món bánh ngọt tự làm sẽ khiến bạn hài lòng.
+
+                        Hãy ghé thăm để tận hưởng hương vị đậm đà và cảm nhận sự an nhiên trong từng khoảnh khắc tại Chil Coffee!</p>
+                      <div class="icon-container">
+                          <div class="icons">
+                              <i class="fas fa-shipping-fast"></i>
+                              <span> free delivery</span>
+                          </div>
+                          <div class="icons">
+                              <i class="fas fa-dollar-sign"></i>
+                              <span> easy payment</span>
+                          </div>
+                          <div class="icons">
+                              <i class="fas fa-headset"></i>
+                              <span> 24/7 service</span>
+                          </div>
+                      </div>
+                      <a href="#" class="btn">learn more</a>
+                  </div>
+              </div>
+
+
+
+  </section>
+
+
+
+
+  <!-- sản phẩm  -->
+
+  <div class="container pr1 product-list">
+    <h2>New products</h2>
+    <div class="row row-product">
+      <div class="productcc col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="product-card">
+            <div class="product-image"><img src="https://web100.vn/w-images/kangaroo.jpg"></div>
+            <div class="product-information">
+              <h3>WATER PURIFIER</h3>
+              <p>đ 1.800.000</p><button class="btn btn-outline-danger btn-product"><i class="fa-solid fa-cart-plus"></i>
+                Add to cart</button>
+            </div>
+          </div>
+      </div>
+      
+    
+   
+    </div>
+    
+  </div>
+
+
+
+
+  <section id="team" class="team1 section section-bg dark-background">
+    <div class="container section-title aos-init aos-animate" data-aos="fa-brandsde-up">
+      <h2>Team</h2>
+      <p>"Cùng nhau vươn xa, chinh phục mọi thử thách!"</p>
+    </div>
+    <div class="container">
+      <div class="row gy-4 info-member">
+       
+     
+<!--      
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="fa-brandsde-up"
+          data-aos-delay="400">
+          <div class="team-member">
+            <div class="member-img"><img src="https://prium.github.io/slick/assets/images/portraits/square/10.jpg"
+                class="img-fluid" alt="">
+              <div class="social"><a href=""><i class="fa-brands fa-twitter"></i></a><a href=""><i
+                    class="fa-brands fa-facebook"></i></a><a href=""><i class="fa-brands fa-instagram"></i></a><a
+                  href=""><i class="fa-brands fa-linkedin"></i></a></div>
+            </div>
+            <div class="member-info">
+              <h4>Amanda Jepson</h4><span>Accountant</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+  </section>
+  
+  <div class="container ct1 mt-5 mb-40">
+    <h2 class='text-1'>Liên Hệ với chúng tôi</h2>
+    <p class='text-2'>Feel free to contact us here for any questions or feedback.</p>
+    <div class="comment-map-section container mt-5">
+      <div class="row">
+        <!-- Cột bình luận -->
+        <div class="col-md-6 comment-section">
+          <h3>Comment</h3>
+          <div class="comment-form mb-4">
+            <input type="text" id="name-input" class="form-control mb-2" placeholder="Nhập tên của bạn" />
+            <input type="text" id="comment-input" class="form-control mb-2" placeholder="Nhập bình luận của bạn" />
+            <button id="submit-comment" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="comment-list">
+            <h4>List Comment</h4>
+            <ul id="comments" class="list-group"></ul>
+            <ul id="names" class="list-group"></ul>
+
+          </div>
+        </div>
+        <!-- Cột Google Map -->
+        <div class="col-md-6 map-section">
+          <h3>Map</h3>
+          <div class="iframe-google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.070840936367!2d106.77992637439873!3d10.88221655723478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d89aad780e49%3A0x54542761d4c22175!2zS8O9IHTDumMgeMOhIEtodSBCIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2sus!4v1734814802862!5m2!1svi!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <footer class="footer pt-5 pb-4">
+    <div class="container">
+      <div class="row">
+     
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
+          <h4>Contact us</h4>
+          <p>Email: lenguyenkhang18022001@gmail.com</p>
+          <p>Điện thoại: +86 123 456 78</p>
+          <p>Địa chỉ: Đại học Khoa học Tự Nhiên Tp. Hồ Chí Minh</p>
+          <p>Facebook:<a href="https://www.facebook.com/khangeward/"> Nguyen Khang</a></p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
+          <h4>Menu</h4>
+          <div class="list-menu-footer"><a href="#">Contact</a><a href="#">About us</a><a href="#">Terms and
+              Conditions</a><a href="#">Privacy Policy</a><a href="#">Author</a></div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom text-center">All rights reserved. Copyright © 2024 by<b><a href="https://www.facebook.com/khangeward/">
+         Nguyen Khang</a></b></div>
+  </footer>
+  <!-- toast message  -->
+
+
+</body>
+
+<script src="./index.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</html>
